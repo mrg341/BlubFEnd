@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inicio de sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-button (click)="login()" *ngIf="(auth.isAuthenticated$ | async) === false">
+    Iniciar sesión
+  </ion-button>
+  <ion-grid id="verificado" *ngIf="(auth.isAuthenticated$ | async) === true">
+    ¡Has sido verificado correctamente!
+  </ion-grid>
+  <ion-grid id="verificado" *ngIf="(auth.isAuthenticated$ | async) === true">
+    Puedes continuar con normalidad, disfruta y sé amable con los demás ;]
+  </ion-grid>
+</ion-content>

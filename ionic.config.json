@@ -1,0 +1,7 @@
+{
+  "name": "The Bluh",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
