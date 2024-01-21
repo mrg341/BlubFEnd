@@ -4,17 +4,17 @@
   
 <ion-tabs>
 <ion-tab-bar slot="top">
-  <ion-tab-button tab="subtab11" href="/tab1/subtab1.1" >
+  <ion-tab-button tab="subtab11" href="/tab1/subtab1.1" *ngIf="(auth.isAuthenticated$ | async) === true">
     <ion-icon aria-hidden="true" name="accessibility"></ion-icon>
     <ion-label>Personal</ion-label>
   </ion-tab-button>
 
     <ion-tab-button tab="subtab12" href="/tab1/subtab1.2" >
-      <ion-icon aria-hidden="true" name="arrow-down"></ion-icon>
-      <ion-label>General</ion-label>
+      <ion-icon aria-hidden="true" name="planet"></ion-icon>
+      <ion-label>Global</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="subtab13" href="/tab1/subtab1.3" >
+    <ion-tab-button tab="subtab13" href="/tab1/subtab1.3" *ngIf="(auth.isAuthenticated$ | async) === true">
       <ion-icon aria-hidden="true" name="locate"></ion-icon>
       <ion-label>Cercano</ion-label>
     </ion-tab-button>

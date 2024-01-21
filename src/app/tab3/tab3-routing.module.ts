@@ -6,6 +6,16 @@ const routes: Routes = [
   {
     path: '',
     component: Tab3Page,
+    children: [
+      {
+        path: 'subtab31',
+        loadChildren: () => import ('../subtab3.1/subtab3.1.module').then(m => m.Subtab31PageModule)
+      },
+      {
+        path: 'subtab32',
+        loadChildren: () => import ('../subtab3.2/subtab3.2.module').then(m => m.Subtab32PageModule)
+      }
+    ]
   }
 ];
 
