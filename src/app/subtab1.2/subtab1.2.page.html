@@ -1,5 +1,65 @@
-<ion-content [fullscreen]="true">
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title slot="start">Push</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
   <ion-grid>
-    Aquí hay dos ajolotes
+    <ion-row *ngFor="let question of questions" >
+      <ion-col size="12" *ngIf="currentUser !== question.user" class="question other-question">
+        <ion-toolbar (click)="answer()">
+          <ion-avatar slot="end">
+          <img [src]="question.pic" />
+        </ion-avatar>
+        <b>{{ question.user }}</b><br><br>
+        <span>{{ question.qst }}</span>
+        <div id="time" text-right>
+          <br>
+          {{ question.createdAt | date:'short'}}
+        </div>
+        </ion-toolbar>
+      </ion-col>
+      <ion-col size="12" *ngIf="currentUser === question.user" class="question my-question">
+        <ion-toolbar (click)="answer()" color="primary">
+          <ion-avatar slot="end">
+            <img [src]="question.pic" />
+          </ion-avatar>
+        <b>{{ question.user }}</b><br><br>
+        <span>{{ question.qst }}</span>
+        <div id="time" text-right>
+          <br>
+          {{ question.createdAt | date:'short'}}
+        </div>
+        </ion-toolbar>
+      </ion-col>
+    </ion-row>
   </ion-grid>
+
+  <ion-modal #new_response [isOpen]="open_new_answer" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Respuesta</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="cancel()"> Cancelar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+    </ng-template>
+
+
+  </ion-modal>
 </ion-content>
+
+
+
+<!--<ion-col size="9" *ngIf="currentUser !== message.user" class="message other-message">
+        <b>{{ message.user }}</b><br>
+        <span>{{ message.msg}}</span>
+        <div class="time" text-right>
+          <br>
+          {{ message.createdAt | date:'short' }}
+        </div>
+      </ion-col>-->

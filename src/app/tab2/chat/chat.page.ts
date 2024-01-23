@@ -28,9 +28,14 @@ export class ChatPage implements OnInit {
     },
     {
       user: 'Tú',
-      createdAt: 1705949222000,
+      createdAt: 1705949226000,
       msg: 'Puedes probar todo lo que quieras, si hay algo que no cuadra, avísame.'
     },
+    {
+      user: 'Osote',
+      createdAt: 1705949227000,
+      msg: 'Ten en cuenta que estas funciones de mensajería aún no están implementadas, por lo que tus mensajes enviados, son automáticamente deshechados.'
+    }
   ];
 
   currentUser = 'Tú'

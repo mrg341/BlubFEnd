@@ -1,13 +1,8 @@
 ion-tab-bar {
     background-color: ion-background-color;
-    border-radius: 15px ;
-    margin-top: 2% ;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 3%;
     padding-left: 5%;
     padding-right: 5%;
-    width: 60%;
-}
-
-ion-tabs {
-    margin-left: 17%;
-    margin-right: 17%;
 }
