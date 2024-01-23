@@ -9,7 +9,7 @@ const routes: Routes = [
     component: Tab2Page,
   },
   {
-    path: 'chat',
+    path: 'chats/:id',
     loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
   }
 ];

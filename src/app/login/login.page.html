@@ -7,7 +7,8 @@
 <ion-content [fullscreen]="true">
 
   <ion-button (click)="login()" *ngIf="(auth.isAuthenticated$ | async) === false">
-    Iniciar sesión
+    <ion-icon aria-hidden="true" name="accessibility"></ion-icon> 
+    Continuar
   </ion-button>
   <ion-grid id="verificado" *ngIf="(auth.isAuthenticated$ | async) === true">
     ¡Has sido verificado correctamente!

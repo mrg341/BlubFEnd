@@ -1,6 +1,9 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { DOCUMENT } from '@angular/common';
+import { Observable } from 'rxjs';
+import { ModalController, PopoverController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -9,10 +12,20 @@ import { DOCUMENT } from '@angular/common';
 })
 export class Tab2Page implements OnInit{
 
+
+  @ViewChild('new_chat') modal: ModalController;
+  @ViewChild('popover') popover: PopoverController;
   segment='chats';
   open_new_chat = false;
+  /*users: Observable<any[]>;*/
+  users = [
+    {id:1, name: 'Osote', photo: 'https://cdn.wikimg.net/es/splatoonwiki/images/6/6f/Don_Oso.png'},
+  ];
+  chatRooms = [
+    {id:1, name: 'Osote', photo: 'https://cdn.wikimg.net/es/splatoonwiki/images/6/6f/Don_Oso.png'},
+  ];
 
-  constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService) {}
+  constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService, private router: Router) {}
 
   ngOnInit(){
 
@@ -23,7 +36,7 @@ export class Tab2Page implements OnInit{
   }
 
   newChat(){
-
+    this.open_new_chat = true;
   }
 
   onWillDismiss(event: any){
@@ -31,7 +44,19 @@ export class Tab2Page implements OnInit{
   }
 
   cancel(){
+    this.modal.dismiss();
+    this.open_new_chat = false;
+  }
 
+  startChat(item){
+
+  }
+
+  getChat(item){
+      const url = ['tab2/chats', item?.id];
+      console.log('Navigating to:', url);
+      this.router.navigate(url);
+    /*this.router.navigate(['/', 'tab2', 'chats', item?.id])*/
   }
 
 }
