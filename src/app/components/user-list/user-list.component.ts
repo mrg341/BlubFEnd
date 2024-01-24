@@ -15,7 +15,8 @@ export class UserListComponent  implements OnInit {
   ngOnInit() {}
 
   redirect(){
-    this.onClick.emit(this.item)
+    this.onClick.emit(this.item);
+    console.log(this.item)
   }
 
 }

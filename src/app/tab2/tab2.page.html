@@ -2,14 +2,8 @@
   <ion-searchbar placeholder="Buscar" color="primary"></ion-searchbar>
 
   <ion-segment [value]="segment" mode="md" (ionChange)="onSegmentChanged($event)">
-    <ion-segment-button value="status">
-      <ion-label>Estado</ion-label>
-    </ion-segment-button>
     <ion-segment-button value="chats">
       <ion-label>Mensajes</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="calls">
-      <ion-label>Llamadas</ion-label>
     </ion-segment-button>
   </ion-segment>
 </ion-header>

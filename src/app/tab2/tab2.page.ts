@@ -40,7 +40,7 @@ export class Tab2Page implements OnInit{
   }
 
   onWillDismiss(event: any){
-
+    console.log(event)
   }
 
   cancel(){
@@ -49,7 +49,10 @@ export class Tab2Page implements OnInit{
   }
 
   startChat(item){
-
+    const url = ['tab2/chats', item?.id];
+      console.log('Navigating to:', url);
+      this.router.navigate(url);
+      this.modal.dismiss();
   }
 
   getChat(item){
