@@ -3,18 +3,3 @@
     <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  
-  <ion-grid>
-    <ion-button (click)="logout()" *ngIf="(auth.isAuthenticated$ | async) === true">
-      Cerrar sesión
-    </ion-button>
-    
-    <ul *ngIf="auth.user$ | async as user">
-      <img src={{user.picture}}>
-      <ion-grid>Sesión iniciada con {{user.name}}.
-      </ion-grid>
-    </ul>
-  </ion-grid>
-</ion-content>

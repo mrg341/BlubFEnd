@@ -18,7 +18,7 @@ export class Subtab12Page implements OnInit {
   ];
 
 
-  questions:any=[
+  public questions:any=[
     {
       user: 'Mrg_341',
       createdAt: 1705949225000,

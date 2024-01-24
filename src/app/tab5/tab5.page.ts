@@ -14,12 +14,6 @@ export class Tab5Page implements OnInit {
   ngOnInit() {
   }
 
-  logout() {
-    this.auth.logout({
-      logoutParams: {
-        returnTo: this.document.location.origin
-      }
-    });
-  };
+  
 
 }

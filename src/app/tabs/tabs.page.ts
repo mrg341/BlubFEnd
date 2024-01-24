@@ -12,4 +12,12 @@ export class TabsPage {
 
   constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService) {}
 
+  logout() {
+    this.auth.logout({
+      logoutParams: {
+        returnTo: this.document.location.origin
+      }
+    });
+  };
+  
 }
