@@ -52,13 +52,14 @@ export class Tab2Page implements OnInit{
     const url = ['tab2/chats', item?.id];
       console.log('Navigating to:', url);
       this.router.navigate(url);
-      this.modal.dismiss();
+      this.cancel()
   }
 
   getChat(item){
       const url = ['tab2/chats', item?.id];
       console.log('Navigating to:', url);
       this.router.navigate(url);
+      this.cancel()
     /*this.router.navigate(['/', 'tab2', 'chats', item?.id])*/
   }
 
