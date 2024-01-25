@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
 @Component({
   selector: 'app-response',
   templateUrl: './response.component.html',
@@ -7,21 +6,21 @@ import { Router } from '@angular/router';
 })
 export class ResponseComponent  implements OnInit {
 
-  @Input() item: any;
+  @Input() question: any;
   @Output() onClick: EventEmitter<any> = new EventEmitter();
-  
-  name: string = '';
-  messages: any = [];
-
-  currentUser = 'Tú'
-  newResponse:any = '';
 
   constructor() { }
 
   ngOnInit() {}
 
   redirect(){
-    this.onClick.emit(this.item)
+    this.onClick.emit(this.question)
   }
+
+  /*sendRes(item){
+    const url = ['tab2/chats', item?.id];
+      console.log('Navigating to:', url);
+      this.router.navigate(url);
+  }*/
 
 }

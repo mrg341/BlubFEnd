@@ -1,5 +1,61 @@
-<ion-content [fullscreen]="true">
-  <ion-grid>
-    Aquí hay tres ajolotes
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title slot="start">Advertencia</ion-title>
+    <ion-icon size="2" class="alertaA" slot="end" name="alert"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-icon class="alerta" name="alert"></ion-icon><br>
+  <ion-grid class="txt" side="end">
+    Este entorno se encuentra en desarrollo, en las próximas actualizaciones será añadido.
   </ion-grid>
+  <ion-icon class="alerta"name="alert"></ion-icon>
+  <ion-grid>
+    <ion-row *ngFor="let question of questions" >
+      <ion-col size="12" *ngIf="question.inRange === true" class="question other-question">
+        <ion-toolbar (click)="answer()">
+          <ion-avatar slot="end">
+          <img [src]="question.pic" />
+        </ion-avatar>
+        <b>{{ question.user }}</b><br><br>
+        <span>{{ question.qst }}</span>
+        <div id="time" text-right>
+          <br>
+          {{ question.createdAt | date:'short'}}
+        </div>
+        </ion-toolbar>
+      </ion-col>
+      <ion-col size="12" *ngIf="question.inRange === true" class="question my-question">
+        <ion-toolbar (click)="answer()" color="primary">
+          <ion-avatar slot="end">
+            <img [src]="question.pic" />
+          </ion-avatar>
+        <b>{{ question.user }}</b><br><br>
+        <span>{{ question.qst }}</span>
+        <div id="time" text-right>
+          <br>
+          {{ question.createdAt | date:'short'}}
+        </div>
+        </ion-toolbar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-modal #new_response [isOpen]="open_new_answer" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Respuesta</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="cancel()"> Cancelar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+    </ng-template>
+
+
+  </ion-modal>
+
 </ion-content>

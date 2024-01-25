@@ -10,7 +10,7 @@
       <ion-col size="12" *ngIf="currentUser !== question.user" class="question other-question">
         <ion-toolbar (click)="answer()">
           <ion-avatar slot="end">
-          <img [src]="question.pic" />
+          <img [src]="question.avat" />
         </ion-avatar>
         <b>{{ question.user }}</b><br><br>
         <span>{{ question.qst }}</span>
@@ -23,7 +23,7 @@
       <ion-col size="12" *ngIf="currentUser === question.user" class="question my-question">
         <ion-toolbar (click)="answer()" color="primary">
           <ion-avatar slot="end">
-            <img [src]="question.pic" />
+            <img [src]="question.avat" />
           </ion-avatar>
         <b>{{ question.user }}</b><br><br>
         <span>{{ question.qst }}</span>
