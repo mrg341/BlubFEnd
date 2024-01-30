@@ -28,6 +28,8 @@ export class Subtab32Page implements OnInit {
       alert('Algo no ha ido bien con tu pregunta. Contáctame y le daré una solución, o bien, espera a que tu conexión sea más estable.');
     }   
 }
+   
+
 
 
 }
