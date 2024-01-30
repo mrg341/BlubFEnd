@@ -1,15 +1,19 @@
-<ion-title>
-
+<ion-title class="ti" color="secondary">
+  Para continuar, selecciona un
+  <br><br>
+  tablero, este, te llevará a
+  <br><br>
+  la sección elegida.
 </ion-title>
-  
-<ion-tabs>
-<ion-tab-bar slot="top">
-  <ion-tab-button tab="subtab11" href="/tab1/subtab1.1" *ngIf="(auth.isAuthenticated$ | async) === true">
-    <ion-icon aria-hidden="true" name="accessibility"></ion-icon>
-    <ion-label>Personal</ion-label>
-  </ion-tab-button>
 
-    <ion-tab-button tab="subtab12" href="/tab1/subtab1.2" >
+<ion-tabs>
+  <ion-tab-bar slot="top">
+    <ion-tab-button tab="subtab11" href="/tab1/subtab1.1" *ngIf="(auth.isAuthenticated$ | async) === true">
+      <ion-icon aria-hidden="true" name="accessibility"></ion-icon>
+      <ion-label>Personal</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="subtab12" href="/tab1/subtab1.2">
       <ion-icon aria-hidden="true" name="planet"></ion-icon>
       <ion-label>Global</ion-label>
     </ion-tab-button>
@@ -19,6 +23,5 @@
       <ion-label>Cercano</ion-label>
     </ion-tab-button>
 
-  
-</ion-tab-bar>
+  </ion-tab-bar>
 </ion-tabs>

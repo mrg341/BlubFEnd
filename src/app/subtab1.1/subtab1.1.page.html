@@ -3,6 +3,9 @@
 </ion-header>
 
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-grid>
     <ion-row *ngFor="let question of questions" >
       <ion-col size="12" *ngIf="currentUser === question.pointer" class="question other-question">
@@ -10,19 +13,6 @@
           <ion-avatar slot="end">
           <img [src]="question.pic" />
         </ion-avatar>
-        <b>{{ question.user }}</b><br><br>
-        <span>{{ question.qst }}</span>
-        <div id="time" text-right>
-          <br>
-          {{ question.createdAt | date:'short'}}
-        </div>
-        </ion-toolbar>
-      </ion-col>
-      <ion-col size="12" *ngIf="currentUser === question.user" class="question my-question">
-        <ion-toolbar (click)="answer()" color="primary">
-          <ion-avatar slot="end">
-            <img [src]="question.pic" />
-          </ion-avatar>
         <b>{{ question.user }}</b><br><br>
         <span>{{ question.qst }}</span>
         <div id="time" text-right>

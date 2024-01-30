@@ -1,12 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Actividad</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title slot="start">Advertencia</ion-title>
+    <ion-icon size="2" class="alertaA" slot="end" name="alert"></ion-icon>
   </ion-toolbar>
 </ion-header>
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+  <ion-icon class="alerta" name="alert"></ion-icon><br>
+  <ion-grid class="txt" side="end">
+    Este entorno se encuentra en desarrollo, en las próximas actualizaciones será añadido.
+  </ion-grid>
+  <ion-icon class="alerta"name="alert"></ion-icon>
+  <ion-grid>

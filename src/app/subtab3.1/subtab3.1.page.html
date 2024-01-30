@@ -1,3 +1,25 @@
-<ion-content [fullscreen]="true">
-Aquí hay un ajolote amarillo
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title *ngFor="let user of users">
+            {{user.username}}.
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row color="primary" class="titprg">
+            Haz una pregunta.
+        </ion-row>
+        <ion-textarea placeholder="¿Qué estás haciendo aquí?" id="qst" class=""></ion-textarea>
+    </ion-grid>
+    <ion-grid>
+        <ion-row color="primary" class="titprg">
+            ¿A quién va dirigida?
+        </ion-row>
+        <ion-textarea placeholder="Si es a todo el mundo, no hace falta que escribas nada en este lugar." id="pointer" class=""></ion-textarea>
+    </ion-grid>
 </ion-content>
+<ion-footer>
+    <ion-button (click)="sendqst()"><ion-icon name="send"></ion-icon></ion-button>
+</ion-footer>

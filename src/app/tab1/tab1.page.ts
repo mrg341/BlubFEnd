@@ -11,4 +11,11 @@ export class Tab1Page {
 
   constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService) {}
 
+  handleRefresh(event) {
+    setTimeout(() => {
+      // Any calls to load data go here
+      event.target.complete();
+    }, 2000);
+  }
+  
 }

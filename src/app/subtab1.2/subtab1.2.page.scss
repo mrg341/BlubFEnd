@@ -4,6 +4,7 @@
     margin-bottom: 4px;
     border: 1px solid var(--ion-color-primary);
     text-shadow: 1px var(--ion-color-primary-shade);
+    
 }
 .other-question{
     background: var(--ion-card-background);
@@ -11,6 +12,7 @@
     padding-left: 3%;
     border: 1px solid var(--ion-color-primary);
     text-shadow: 1px var(--ion-color-primary-shade);
+    
 }
 .my-question{
     background: var(--ion-color-primary);
@@ -18,14 +20,17 @@
     padding-left: 3%;
     border: 1px solid var(--ion-color-primary);
     text-shadow: 1px var(--ion-color-primary-shade);
+    
 }
 #time{
     color: #ffffff;
     float: right;
     font-size: small;
+    
 }
 ion-title{
     color: #CDFFE4;
+    
 }
 .picture{
     width: 3%;
