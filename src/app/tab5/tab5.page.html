@@ -1,19 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-title slot="start">Advertencia</ion-title>
-    <ion-icon size="2" class="alertaA" slot="end" name="alert"></ion-icon>
+    <ion-title slot="start">Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
   <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  
+  <ion-picker></ion-picker>
 
-  <ion-icon class="alerta" name="alert"></ion-icon><br>
-  <ion-grid class="txt" side="end">
-    Este entorno se encuentra en desarrollo, en las próximas actualizaciones será añadido.
+  <ion-grid class="avat">
+    <ion-img src="../../assets/p_pics/1.png" value="avat" class=""></ion-img>
   </ion-grid>
-  <ion-icon class="alerta"name="alert"></ion-icon>
+  <ion-col>
+    <ion-row></ion-row>
+  </ion-col>
 </ion-content>

@@ -9,6 +9,17 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class Tab5Page implements OnInit {
 
+  public currentUser = [
+    {
+      id: 'ajolote@gmail.com',
+      name: 'ajolote de limón',
+      desc: '',
+      avat: '',
+      qst_count: 3,
+      ans_count: 0
+    }
+  ];
+
   constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService) { }
 
   ngOnInit() {
